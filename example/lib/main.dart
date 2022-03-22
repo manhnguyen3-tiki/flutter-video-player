@@ -1,58 +1,157 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'package:flutter_video_player/player_state.dart';
+import 'package:flutter_video_player_example/audio.dart';
+import 'package:flutter_video_player_example/video.dart';
 
-import 'package:flutter/services.dart';
-import 'package:flutter_video_player/flutter_video_player.dart';
+void main() => runApp(MainApp());
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await FlutterVideoPlayer.platformVersion ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
-
+class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
+      debugShowCheckedModeBanner: false,
+      title: "AV Playout",
+      home: PlayoutExample(),
+    );
+  }
+}
+
+class PlayoutExample extends StatefulWidget {
+  @override
+  _PlayoutExampleState createState() => _PlayoutExampleState();
+}
+
+class _PlayoutExampleState extends State<PlayoutExample> {
+  PlayerState _desiredState = PlayerState.PLAYING;
+  bool _showPlayerControls = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        brightness: Brightness.dark,
+        backgroundColor: Colors.grey[900],
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () async {
+              // pause playback
+              setState(() {
+                _desiredState = PlayerState.PAUSED;
+              });
+              // wait for user to come back from navigated screen
+              await Navigator.push(context, MaterialPageRoute<void>(
+                builder: (context) {
+                  return Scaffold(
+                    appBar: AppBar(),
+                    body: Container(
+                      child: Center(
+                        child: AudioPlayout(
+                          desiredState: _desiredState,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ));
+              // user is back. resume playback
+//              setState(() {
+//                _desiredState = PlayerState.PLAYING;
+//              });
+            },
+          ),
+          /* toggle show player controls */
+          IconButton(
+            icon: Icon(Icons.adjust),
+            onPressed: () async {
+              setState(() {
+                _showPlayerControls = !_showPlayerControls;
+              });
+            },
+          ),
+        ],
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.local_play,
+              color: Colors.white,
+            ),
+            Container(
+              width: 7.0,
+            ),
+            Text(
+              "AV Player",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(color: Colors.white),
+            )
+          ],
+        ),
+      ),
+      body: Container(
+        color: Colors.black,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(17.0, 33.0, 17.0, 0.0),
+                child: Text(
+                  "Video Player",
+                  style: Theme.of(context).textTheme.headline4!.copyWith(
+                      color: Colors.pink[500], fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(17.0, 0.0, 17.0, 30.0),
+                child: Text(
+                  "Plays video from a URL with background audio support and lock screen controls.",
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: Colors.white70, fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+                child: VideoPlayout(
+              desiredState: _desiredState,
+              showPlayerControls: _showPlayerControls,
+            )),
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(17.0, 23.0, 17.0, 0.0),
+                child: Text(
+                  "Audio Player",
+                  style: Theme.of(context).textTheme.headline4!.copyWith(
+                      color: Colors.pink[500], fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(17.0, 0.0, 17.0, 30.0),
+                child: Text(
+                  "Plays audio from a URL with background audio support and lock screen controls.",
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: Colors.white70, fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: AudioPlayout(
+                desiredState: _desiredState,
+              ),
+            ),
+          ],
         ),
       ),
     );
