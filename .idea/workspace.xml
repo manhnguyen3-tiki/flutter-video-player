@@ -5,43 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164cd1de-c794-4f90-96b6-17df54757394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/FlutterAVPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/MediaNotificationManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/PlayerNotificationUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/PlayerState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/audio/AudioPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/audio/AudioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/audio/AudioServiceBinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/audio/RemoteReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerViewFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/RemoteReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/libs/android_malibrary.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/libs/exoplayer_AkamaiMediaAnalytics.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/res/drawable/ic_pause.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/res/drawable/ic_play.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/audio.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/hls/getManifestLanguages.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/video.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/audio.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/multiaudio/HLSManifestLanguage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/multiaudio/LanguageCode.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/multiaudio/MultiAudioSupport.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/player_observer.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/player_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/textTrack.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/video.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Classes/AudioPlayer.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Classes/FlutterAVPlayer.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Classes/VideoPlayer.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/FlutterVideoPlayerPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/FlutterVideoPlayerPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_video_player.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_video_player.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_video_player.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftFlutterVideoPlayerPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftFlutterVideoPlayerPlugin.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,16 +38,16 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ios/Classes" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios/Classes" />
       <recent name="$PROJECT_DIR$/example/lib" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player" />
       <recent name="$PROJECT_DIR$/android/src/main" />
-      <recent name="$PROJECT_DIR$/android/src/main/java/com/example/flutter_video_player" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player" />
