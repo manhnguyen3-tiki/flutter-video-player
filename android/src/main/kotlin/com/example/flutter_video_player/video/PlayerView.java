@@ -52,6 +52,14 @@ public class PlayerView implements PlatformView, MethodChannel.MethodCallHandler
                 player.pause();
                 result.success(true);
                 break;
+            case "mute":
+                player.mute();
+                result.success(true);
+                break;
+            case "unMute":
+                player.unMute();
+                result.success(true);
+                break;
             case "setPreferredAudioLanguage":
                 player.setPreferredAudioLanguage(call.arguments);
                 result.success(true);

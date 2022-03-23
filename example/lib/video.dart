@@ -23,11 +23,15 @@ class _VideoPlayoutState extends State<VideoPlayout>
     with PlayerObserver, MultiAudioSupport {
   final String _url = 'https://media.w3.org/2010/05/sintel/trailer.mp4';
   List<HLSManifestLanguage> _hlsLanguages = [];
+  late VideoPlayerController _videoPlayerController;
+  bool _isPlaying = true;
+  bool _isMute = false;
 
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration.zero, _getHLSManifestLanguages);
+    _videoPlayerController = VideoPlayerController();
   }
 
   Future<void> _getHLSManifestLanguages() async {
@@ -35,6 +39,20 @@ class _VideoPlayoutState extends State<VideoPlayout>
       _hlsLanguages = await getManifestLanguages(_url);
       setState(() {});
     }
+  }
+
+  void _playOrPause() {
+    _isPlaying ?
+        _videoPlayerController.pause()
+        : _videoPlayerController.play();
+    _isPlaying = !_isPlaying;
+  }
+
+  void _muteOrUnmute() {
+    _isMute ?
+        _videoPlayerController.unMute()
+        : _videoPlayerController.mute();
+    _isMute = !_isMute;
   }
 
   @override
@@ -46,6 +64,7 @@ class _VideoPlayoutState extends State<VideoPlayout>
           AspectRatio(
             aspectRatio: 16 / 9,
             child: Video(
+              controller: _videoPlayerController,
               autoPlay: true,
               showControls: widget.showPlayerControls,
               title: "MTA International",
@@ -59,6 +78,26 @@ class _VideoPlayoutState extends State<VideoPlayout>
               preferredTextLanguage: "en",
               loop: false,
             ),
+          ),
+          MaterialButton(
+            child: Text(
+              'play or pause',
+              style: Theme.of(context)
+                  .textTheme
+                  .button!
+                  .copyWith(color: Colors.white),
+            ),
+            onPressed: _playOrPause,
+          ),
+          MaterialButton(
+            child: Text(
+              'mute or unmute',
+              style: Theme.of(context)
+                  .textTheme
+                  .button!
+                  .copyWith(color: Colors.white),
+            ),
+            onPressed: _muteOrUnmute,
           ),
           /* multi language menu */
           _hlsLanguages.length < 2 && !Platform.isIOS

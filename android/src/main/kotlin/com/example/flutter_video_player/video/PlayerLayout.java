@@ -457,6 +457,18 @@ public class PlayerLayout extends PlayerView implements FlutterAVPlayer, EventCh
         }
     }
 
+    public void mute() {
+        if (mPlayerView != null) {
+            mPlayerView.setVolume(0f);
+        }
+    }
+
+    public void unMute() {
+        if (mPlayerView != null) {
+            mPlayerView.setVolume(1f);
+        }
+    }
+
     /* onTime listener */
     private void listenForPlayerTimeChange() {
 

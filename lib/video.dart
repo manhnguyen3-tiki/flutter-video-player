@@ -7,6 +7,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_video_player/player_state.dart';
 import 'package:flutter_video_player/textTrack.dart';
 
+class VideoPlayerController {
+  late void Function() pause;
+  late void Function() play;
+  late void Function() mute;
+  late void Function() unMute;
+}
+
 /// Video plugin for playing HLS stream using native player. [autoPlay] flag
 /// controls whether to start playback as soon as player is ready. To show/hide
 /// player controls, use [showControls] flag. The [title] and [subtitle] are
@@ -38,6 +45,7 @@ class Video extends StatefulWidget {
   final double position;
   final Function? onViewCreated;
   final PlayerState desiredState;
+  final VideoPlayerController controller;
 
   const Video(
       {Key? key,
@@ -53,17 +61,25 @@ class Video extends StatefulWidget {
       this.position = -1,
       this.onViewCreated,
       this.desiredState = PlayerState.PLAYING,
-      this.textTracks})
+      this.textTracks,
+      required this.controller})
       : super(key: key);
 
   @override
-  _VideoState createState() => _VideoState();
+  _VideoState createState() => _VideoState(controller);
 }
 
 class _VideoState extends State<Video> with WidgetsBindingObserver {
   MethodChannel? _methodChannel;
   int? _platformViewId;
   Widget _playerWidget = Container();
+
+  _VideoState(VideoPlayerController _controller) {
+    _controller.pause = _pausePlayback;
+    _controller.play = _resumePlayback;
+    _controller.mute = _mutePlayback;
+    _controller.unMute = _unMutePlayback;
+  }
 
   @override
   void initState() {
@@ -252,6 +268,18 @@ class _VideoState extends State<Video> with WidgetsBindingObserver {
   void _resumePlayback() async {
     if (_methodChannel != null) {
       _methodChannel!.invokeMethod("resume");
+    }
+  }
+
+  void _mutePlayback() async {
+    if (_methodChannel != null) {
+      _methodChannel!.invokeMethod("mute");
+    }
+  }
+
+  void _unMutePlayback() async {
+    if (_methodChannel != null) {
+      _methodChannel!.invokeMethod("unMute");
     }
   }
 

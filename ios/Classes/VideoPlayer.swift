@@ -195,6 +195,14 @@ class VideoPlayer: NSObject, FlutterPlugin, FlutterStreamHandler, FlutterPlatfor
                 self.pause()
             }
 
+            else if ("mute" == call.method) {
+                self.mute()
+            }
+
+            else if ("unMute" == call.method) {
+                self.unMute()
+            }
+
             /* dispose */
             else if ("dispose" == call.method) {
 
@@ -534,6 +542,16 @@ class VideoPlayer: NSObject, FlutterPlugin, FlutterStreamHandler, FlutterPlatfor
         updateInfoPanelOnPause()
         
         onDurationChange()
+    }
+
+    private func mute() {
+
+        player?.isMuted = true
+    }
+
+    private func unMute() {
+
+        player?.isMuted = false
     }
     
     private func onTimeInterval(time:CMTime) {
