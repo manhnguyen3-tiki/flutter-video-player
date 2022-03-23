@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164cd1de-c794-4f90-96b6-17df54757394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AudioPlayer.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/FlutterAVPlayer.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/VideoPlayer.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftFlutterVideoPlayerPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftFlutterVideoPlayerPlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/video.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/video.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/video.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/video.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -21,7 +21,7 @@ class VideoPlayout extends StatefulWidget {
 
 class _VideoPlayoutState extends State<VideoPlayout>
     with PlayerObserver, MultiAudioSupport {
-  final String _url = 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4';
+  final String _url = 'https://media.w3.org/2010/05/sintel/trailer.mp4';
   List<HLSManifestLanguage> _hlsLanguages = [];
 
   @override

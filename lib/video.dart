@@ -60,7 +60,7 @@ class Video extends StatefulWidget {
   _VideoState createState() => _VideoState();
 }
 
-class _VideoState extends State<Video> {
+class _VideoState extends State<Video> with WidgetsBindingObserver {
   MethodChannel? _methodChannel;
   int? _platformViewId;
   Widget _playerWidget = Container();
@@ -68,6 +68,7 @@ class _VideoState extends State<Video> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance!.addObserver(this);
     _setupPlayer();
   }
 
@@ -175,7 +176,16 @@ class _VideoState extends State<Video> {
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.inactive) {
+      _pausePlayback();
+    }
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
     _disposePlatformView(isDisposing: true);
     super.dispose();
   }
