@@ -51,9 +51,9 @@ class _PlayoutExampleState extends State<PlayoutExample> {
                     appBar: AppBar(),
                     body: Container(
                       child: Center(
-                        child: AudioPlayout(
-                          desiredState: _desiredState,
-                        ),
+                        // child: AudioPlayout(
+                        //   desiredState: _desiredState,
+                        // ),
                       ),
                     ),
                   );
@@ -147,9 +147,9 @@ class _PlayoutExampleState extends State<PlayoutExample> {
               ),
             ),
             SliverToBoxAdapter(
-              child: AudioPlayout(
-                desiredState: _desiredState,
-              ),
+              // child: AudioPlayout(
+              //   desiredState: _desiredState,
+              // ),
             ),
           ],
         ),
