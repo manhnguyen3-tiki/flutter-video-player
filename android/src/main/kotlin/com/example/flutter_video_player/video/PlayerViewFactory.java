@@ -22,7 +22,7 @@ public class PlayerViewFactory extends PlatformViewFactory {
 
         final PlayerViewFactory plugin = new PlayerViewFactory(registrar.messenger(), registrar.activity());
 
-        registrar.platformViewRegistry().registerViewFactory("tv.mta/NativeVideoPlayer", plugin);
+        registrar.platformViewRegistry().registerViewFactory("tk.vn/NativeVideoPlayer", plugin);
 
         registrar.addViewDestroyListener(new PluginRegistry.ViewDestroyListener() {
             @Override

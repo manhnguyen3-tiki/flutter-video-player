@@ -253,7 +253,7 @@ public class PlayerLayout extends PlayerView implements FlutterAVPlayer, EventCh
 
         new EventChannel(
                 messenger,
-                "tv.mta/NativeVideoPlayerEventChannel_" + this.viewId,
+                "tk.vn/NativeVideoPlayerEventChannel_" + this.viewId,
                 JSONMethodCodec.INSTANCE).setStreamHandler(this);
 
         updateMediaSource();

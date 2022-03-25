@@ -101,7 +101,7 @@ class _VideoState extends State<Video> with WidgetsBindingObserver {
       /* Android */
       if (Platform.isAndroid) {
         _playerWidget = AndroidView(
-          viewType: 'tv.mta/NativeVideoPlayer',
+          viewType: 'tk.vn/NativeVideoPlayer',
           creationParams: {
             "autoPlay": widget.autoPlay,
             "loop": widget.loop,
@@ -133,7 +133,7 @@ class _VideoState extends State<Video> with WidgetsBindingObserver {
       /* iOS */
       else if (Platform.isIOS) {
         _playerWidget = UiKitView(
-          viewType: 'tv.mta/NativeVideoPlayer',
+          viewType: 'tk.vn/NativeVideoPlayer',
           creationParams: {
             "autoPlay": widget.autoPlay,
             "loop": widget.loop,
@@ -209,7 +209,7 @@ class _VideoState extends State<Video> with WidgetsBindingObserver {
   void _onPlatformViewCreated(int viewId) {
     _platformViewId = viewId;
     _methodChannel =
-        MethodChannel("tv.mta/NativeVideoPlayerMethodChannel_$viewId");
+        MethodChannel("tk.vn/NativeVideoPlayerMethodChannel_$viewId");
   }
 
   /// The [desiredState] flag has changed so need to update playback to

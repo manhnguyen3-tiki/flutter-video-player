@@ -9,7 +9,7 @@ mixin MultiAudioSupport {
   MethodChannel? _methodChannel;
   Future<void> enableMultiAudioSupport(int viewId) async {
     _methodChannel =
-        MethodChannel("tv.mta/NativeVideoPlayerMethodChannel_$viewId");
+        MethodChannel("tk.vn/NativeVideoPlayerMethodChannel_$viewId");
   }
 
   /// Set/Change audio language for currently playing asset. [languageCode]

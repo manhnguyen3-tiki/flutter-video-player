@@ -7,7 +7,13 @@
     <list default="true" id="164cd1de-c794-4f90-96b6-17df54757394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/FlutterVideoPlayerPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/FlutterVideoPlayerPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/flutter_video_player/video/PlayerViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/VideoPlayer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/VideoPlayer.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/multiaudio/MultiAudioSupport.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/multiaudio/MultiAudioSupport.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/player_observer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/player_observer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/video.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/video.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

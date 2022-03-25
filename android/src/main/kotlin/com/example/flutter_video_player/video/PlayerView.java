@@ -17,7 +17,7 @@ public class PlayerView implements PlatformView, MethodChannel.MethodCallHandler
 
     PlayerView(Context context, Activity activity, int id, BinaryMessenger messenger, Object args) {
 
-        new MethodChannel(messenger, "tv.mta/NativeVideoPlayerMethodChannel_" + id)
+        new MethodChannel(messenger, "tk.vn/NativeVideoPlayerMethodChannel_" + id)
                 .setMethodCallHandler(this);
 
         player = new PlayerLayout(context, activity, messenger, id, args);
